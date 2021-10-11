@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1298" started-at="2021-10-08T20:43:30 IST" finished-at="2021-10-08T20:43:31 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1298" started-at="2021-10-08T20:43:30 IST" finished-at="2021-10-08T20:43:31 IST">
+      <class name="Source.jiraissuebasics">
+        <test-method status="PASS" signature="addcomment()[pri:0, instance:Source.jiraissuebasics@1b68ddbd]" name="addcomment" duration-ms="1145" started-at="2021-10-08T20:43:30 IST" finished-at="2021-10-08T20:43:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addcomment -->
+        <test-method status="PASS" signature="createissue()[pri:0, instance:Source.jiraissuebasics@1b68ddbd]" name="createissue" duration-ms="126" started-at="2021-10-08T20:43:31 IST" finished-at="2021-10-08T20:43:31 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createissue -->
+      </class> <!-- Source.jiraissuebasics -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
