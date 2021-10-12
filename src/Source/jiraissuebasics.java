@@ -3,6 +3,8 @@ package Source;
 import io.restassured.RestAssured;
 import static io.restassured.RestAssured.*;
 
+import java.io.File;
+
 import org.testng.annotations.Test;
 
 import io.restassured.filter.session.SessionFilter;
@@ -27,28 +29,28 @@ public class jiraissuebasics {
 		
 		//Create issue
 		
-		String response = given().header("Content-Type","application/json")
+		/*String response = given().header("Content-Type","application/json")
 		.body("{\n" + 
 				"    \"fields\": {\n" + 
 				"       \"project\":\n" + 
 				"	   {\n" + 
 				"          \"key\": \"RES\"\n" + 
 				"       },\n" + 
-				"       \"summary\": \"Issue number 7\",\n" + 
-				"       \"description\": \"This is the seventh issue created through API\",\n" + 
+				"       \"summary\": \"Issue number 8\",\n" + 
+				"       \"description\": \"This is the eighth issue created through API\",\n" + 
 				"       \"issuetype\": {\n" + 
 				"          \"name\": \"Bug\"\n" + 
 				"       }\n" + 
 				"	   }\n" + 
 				"	   }").filter(sf).when().post("/rest/api/2/issue").then().extract().response().asString();		
-		System.out.println(response);
+		System.out.println(response);*/
 	
 	
 		//Add Comment
 		
 		String commentresponse = given().header("Content-Type","application/json").
 		body("{\n" + 
-				"    \"body\": \"Added a comment in the issue through automation.\",\n" + 
+				"    \"body\": \"Please find this new comment.\",\n" + 
 				"    \"visibility\": {\n" + 
 				"        \"type\": \"role\",\n" + 
 				"        \"value\": \"Administrators\"\n" + 
@@ -57,8 +59,10 @@ public class jiraissuebasics {
 		.response().asString();
 		System.out.println(commentresponse);
 		
-		/*//Add attachment
-		given().filter(sf).header("Content-Type","application/json")*/
+		//Add attachment
+		given().header("X-Atlassian-Token","no-check").filter(sf).pathParam("key", "10100").
+		header("Content-Type","multipart/form-data").multiPart("file",new File ("newtextfile")).log().all()
+		.when().post("/rest/api/2/issue/{key}/attachments").then().assertThat().statusCode(200);
 	}
 
 }

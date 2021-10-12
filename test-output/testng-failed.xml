@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Source.LibraryApi">
+      <class name="Source.jiraissuebasics">
         <methods>
-          <include name="postrequest" invocation-numbers="0 1 2"/>
+          <include name="createissue"/>
         </methods>
-      </class> <!-- Source.LibraryApi -->
+      </class> <!-- Source.jiraissuebasics -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
