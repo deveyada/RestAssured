@@ -40,6 +40,7 @@ public class coursedetails {
 		
 		System.out.println(cp.getLinkedIn());
 		System.out.println(cp.getCourses().getApi().get(0).getCourseTitle());
+		System.out.println(cp.getCourses().getApi().get(0).getPrice());
 		
 	}
 
