@@ -8,9 +8,11 @@ import io.restassured.path.json.JsonPath;
 
 import static io.restassured.RestAssured.*;
 
+import java.util.List;
+
 public class coursedetails {
 	
-	String url = "https://rahulshettyacademy.com/getCourse.php?code=4%2F0AX4XfWjArMn34quDe5BHUgnaICWqPvk9RuhHzFCNJZzXFkbM87_IfEZVzd2I5ugkpdIqFw&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none";
+	String url = "https://rahulshettyacademy.com/getCourse.php?code=4%2F0AX4XfWjBDFp7Q37D8aTgoKuV0qu2xSSyUcDZ9WBuEKIHoUqzo3oBoKDShBDM7FIsmpIatg&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=0&prompt=none";
 	@Test
 	
 	public void oauthautomation() {
@@ -42,6 +44,21 @@ public class coursedetails {
 		System.out.println(cp.getCourses().getApi().get(0).getCourseTitle());
 		System.out.println(cp.getCourses().getApi().get(0).getPrice());
 		
+		List<WebAutomation> wacourses = cp.getCourses().getWebAutomation();
+		List<Api> apicourse = cp.getCourses().getApi();
+		
+		for (int i=0;i<wacourses.size();i++)
+		{
+			System.out.println(wacourses.get(i).getCourseTitle());
+			System.out.println(wacourses.get(i).getPrice());
+		}
+		for (int j=0;j<apicourse.size();j++)
+		{
+			if (apicourse.get(j).getCourseTitle().equalsIgnoreCase("SoapUI Webservices testing"))
+			{
+				System.out.println(cp.getCourses().getApi().get(j).getPrice());
+			}
+		}
 	}
 
 }
