@@ -1,6 +1,3 @@
-
-
-
 import io.restassured.RestAssured;
 import io.restassured.path.json.JsonPath;
 import static org.hamcrest.Matchers.*;
@@ -10,6 +7,8 @@ import static io.restassured.RestAssured.*;
 import Source.Payload;
 
 public class Revision {
+	
+	public static String placeid;
 
 	public static void main(String[] args) {
 		
@@ -19,7 +18,7 @@ public class Revision {
 		then().assertThat().statusCode(200).extract().response().asPrettyString();
 		
 		JsonPath jsp = new JsonPath(response);
-		String placeid = jsp.getString("place_id");
+		placeid = jsp.getString("place_id");
 		
 		System.out.println(response);
 		System.out.println(placeid);
@@ -32,6 +31,10 @@ public class Revision {
 				+ "}").
 		put("/maps/api/place/update/json").
 		then().log().all().statusCode(200).body("msg", equalTo("Address successfully updated"));
+		
+		String getresponse = given().queryParams("place_id",placeid,"key","qaclick123").when()
+		.get("/maps/api/place/get/json").then().extract().response().asPrettyString();
+		System.out.println(getresponse);
 	}
 
 }
