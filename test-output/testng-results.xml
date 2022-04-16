@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-10-25T16:43:12 IST" name="Default suite" finished-at="2021-10-25T16:43:15 IST" duration-ms="2414">
+  <suite started-at="2022-04-16T12:43:07 IST" name="Default suite" finished-at="2022-04-16T12:43:08 IST" duration-ms="1634">
     <groups>
     </groups>
-    <test started-at="2021-10-25T16:43:12 IST" name="Default test" finished-at="2021-10-25T16:43:15 IST" duration-ms="2414">
-      <class name="Pojo.googleapi">
-        <test-method signature="googlepostapi()[pri:0, instance:Pojo.googleapi@5cc5b667]" started-at="2021-10-25T16:43:12 IST" name="googlepostapi" finished-at="2021-10-25T16:43:15 IST" duration-ms="2363" status="PASS">
+    <test started-at="2022-04-16T12:43:07 IST" name="Default test" finished-at="2022-04-16T12:43:08 IST" duration-ms="1634">
+      <class name="libraryapi.LibraryAPI">
+        <test-method signature="postaction()[pri:0, instance:libraryapi.LibraryAPI@732c2a62]" started-at="2022-04-16T12:43:07 IST" name="postaction" finished-at="2022-04-16T12:43:08 IST" duration-ms="1602" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- googlepostapi -->
-      </class> <!-- Pojo.googleapi -->
+        </test-method> <!-- postaction -->
+      </class> <!-- libraryapi.LibraryAPI -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
